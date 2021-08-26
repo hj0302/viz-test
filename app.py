@@ -181,7 +181,9 @@ def update_graph(sector, xaxis, yaxis):
     fig = go.Figure()
 
     # Add traces
-    fig.add_trace(go.Scatter(x=df[xaxis],y=df[yaxis], mode="markers+text",text=df['Symbol'],marker=dict(color="DarkOrange")))
+    fig.add_trace(go.Scatter(x=df[xaxis],y=df[yaxis], mode="markers+text",text=df['Symbol'],marker=dict(color="black")))
+    fig.add_trace(go.Scatter(x=[df[xaxis].mean()],y=[df[yaxis].mean()],mode="markers+text",text=['평균'],marker=dict(color="red",symbol=18, size=12), name='평균'))
+
     fig.update_traces(textposition='top center')
     #fig.update_layout(margin={'l': 40, 'b': 40, 't': 10, 'r': 0}, hovermode='closest')
     # Add figure title
